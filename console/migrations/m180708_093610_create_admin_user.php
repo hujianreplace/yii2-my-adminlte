@@ -27,8 +27,7 @@ class m180708_093610_create_admin_user extends Migration
             'profile' => $this->text(),
             'auth_key' => $this->string(32)->notNull(),
             'password_hash' => $this->string(255)->notNull(),
-            'password_reset_token' => $this->string(255)->unique(),
-            'user_type' => $this->tinyInteger()->notNull()->defaultValue(0)->comment('用户类型 0普通管理员 1超级管理员')
+            'password_reset_token' => $this->string(255)->unique()
         ], $tableOptions);
 
         $this->insert('{{%admin_user}}', [
@@ -38,9 +37,14 @@ class m180708_093610_create_admin_user extends Migration
             'email' => '285520463@qq.com',
             'profile' => '我是管理员',
             'auth_key' => 'MYtOzyIK1w2pmjc7ORFCQ8Uc6xmvF4QZ',
-            'password_hash' => '$2y$13$MUxMmyQzk/.QpvEAcnKNhOoDcAsGuwgNo7sNFTx0sRhLF0sbv9VGu',
-            'user_type' => 1
+            'password_hash' => '$2y$13$MUxMmyQzk/.QpvEAcnKNhOoDcAsGuwgNo7sNFTx0sRhLF0sbv9VGu'
         ]);
+
+        $auth = Yii::$app->authManager;
+        $supperAdmin = $auth->createRole('supperAdmin');
+        $supperAdmin->description = '超级管理员';
+        $auth->add($supperAdmin);
+        $auth->assign($supperAdmin, 1);
     }
 
     /**
