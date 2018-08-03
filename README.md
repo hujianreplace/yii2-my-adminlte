@@ -14,3 +14,4 @@
 
 #### 配置
 1.  根目录运行 php init
+2.  根目录运行 composer install
