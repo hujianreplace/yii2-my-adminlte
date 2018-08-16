@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <div class="info-box-content">
                 <span class="info-box-text">文章</span>
-                <span class="info-box-number"><?=\common\models\Post::find()->count();?></span>
+                <span class="info-box-number">1</span>
             </div>
             <!-- /.info-box-content -->
         </div>
@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             <div class="info-box-content">
                 <span class="info-box-text">分类</span>
-                <span class="info-box-number"><?=\common\models\Category::find()->count();?></span>
+                <span class="info-box-number">2</span>
             </div>
             <!-- /.info-box-content -->
         </div>

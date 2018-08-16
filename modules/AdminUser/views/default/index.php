@@ -46,14 +46,6 @@ $this->params['action'] = Html::a('创建管理员', ['create'], ['class' => 'bt
                                 ];
                                 return Html::a('<span class="glyphicon glyphicon-user"></span> 重置密码', $url, $options);
                             },
-                            'permission' => function($url, $model, $key){
-                                $options = [
-                                    'title' => '设置权限',
-                                    'aria-label' => '设置权限',
-                                    'data-method' => 'post'
-                                ];
-                                return Html::a('<span class="glyphicon glyphicon-lock"></span> 设置权限', $url, $options);
-                            }
                         ],
                     ],
                 ],

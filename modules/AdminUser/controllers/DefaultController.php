@@ -1,19 +1,19 @@
 <?php
+namespace modules\AdminUser\controllers;
 
-namespace backend\controllers;
-
-use backend\models\AdminUser;
-use backend\models\AdminUserSearch;
-use backend\models\ResetPwdForm;
-use backend\models\SignupForm;
 use Yii;
+use modules\AdminUser\models\ResetPwdForm;
+use modules\AdminUser\models\SignupForm;
+use modules\AdminUser\models\AdminUser;
+use modules\AdminUser\models\AdminUserSearch;
+use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 
 /**
- * AdminUserController implements the CRUD actions for AdminUser model.
+ * Default controller for the `user` module
  */
-class AdminUserController extends BaseController {
-
+class DefaultController extends Controller
+{
     /**
      * Lists all AdminUser models.
      * @return mixed
@@ -25,17 +25,6 @@ class AdminUserController extends BaseController {
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-        ]);
-    }
-
-    /**
-     * Displays a single AdminUser model.
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionView($id) {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
         ]);
     }
 

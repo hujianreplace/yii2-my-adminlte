@@ -3,9 +3,9 @@
 use yii\db\Migration;
 
 /**
- * Class m180708_093610_create_admin_user
+ * Class m180816_125439_create_admin_user
  */
-class m180708_093610_create_admin_user extends Migration
+class m180816_125439_create_admin_user extends Migration
 {
     /**
      * {@inheritdoc}
@@ -40,11 +40,11 @@ class m180708_093610_create_admin_user extends Migration
             'password_hash' => '$2y$13$MUxMmyQzk/.QpvEAcnKNhOoDcAsGuwgNo7sNFTx0sRhLF0sbv9VGu'
         ]);
 
-        $auth = Yii::$app->authManager;
-        $supperAdmin = $auth->createRole('supperAdmin');
-        $supperAdmin->description = '超级管理员';
-        $auth->add($supperAdmin);
-        $auth->assign($supperAdmin, 1);
+//        $auth = Yii::$app->authManager;
+//        $supperAdmin = $auth->createRole('supperAdmin');
+//        $supperAdmin->description = '超级管理员';
+//        $auth->add($supperAdmin);
+//        $auth->assign($supperAdmin, 1);
     }
 
     /**
@@ -55,19 +55,4 @@ class m180708_093610_create_admin_user extends Migration
         $this->dropTable('{{%admin_user}}');
         return true;
     }
-
-    /*
-    // Use up()/down() to run migration code without a transaction.
-    public function up()
-    {
-
-    }
-
-    public function down()
-    {
-        echo "m180708_093610_create_admin_user cannot be reverted.\n";
-
-        return false;
-    }
-    */
 }

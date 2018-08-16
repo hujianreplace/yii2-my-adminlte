@@ -19,7 +19,11 @@ return [
         'fixture' => [
             'class' => 'yii\console\controllers\FixtureController',
             'namespace' => 'common\fixtures',
-          ],
+        ],
+        'migrate' => [
+            'class' => 'yii\console\controllers\MigrateController',
+            'as moduleMigratePathBehavior' => \modules\behaviors\MigrationPathBehavior::class
+        ],
     ],
     'components' => [
         'log' => [

@@ -1,10 +1,10 @@
 <?php
-namespace common\models;
+namespace modules\AdminUser\models;
 
 /**
  * 后台会员所有权限
  * Class AdminUserPermit
- * @package backend\models
+ * @package modules\AdminUser\models
  */
 class AdminUserPermit {
 

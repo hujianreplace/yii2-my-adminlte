@@ -1,10 +1,9 @@
 <?php
-
-namespace backend\models;
+namespace modules\AdminUser\models;
 
 use Yii;
 use yii\base\NotSupportedException;
-use yii\helpers\ArrayHelper;
+use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 
 /**
@@ -21,7 +20,7 @@ use yii\web\IdentityInterface;
  * @property string $password_reset_token
  * @property int $user_type
  */
-class AdminUser extends \yii\db\ActiveRecord implements IdentityInterface
+class AdminUser extends ActiveRecord implements IdentityInterface
 {
     /**
      * @inheritdoc
